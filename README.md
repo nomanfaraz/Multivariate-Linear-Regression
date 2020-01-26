@@ -6,7 +6,7 @@ To do :
 - [ ] Regularization
 - [ ] Divide data into training and test
 - [ ] Determine accuracy of model (root mean square error)
-- [ ] Observe variation of gradient Descent with varying alpha
+- [ ] Observe variation of gradient Descent by varying alpha
 - [x] Cost function
 - [x] Gradient Descent
 - [x] Normalization
