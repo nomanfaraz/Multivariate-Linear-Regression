@@ -33,6 +33,11 @@ def getAccuracy(X,y,theta):
 
     return error
 
+#To do: function to do Gradient Descent with Regularization
+def gdRegularized(X,y,theta,iters,alpha):
+
+    return cost,theta
+
 
 #To do: get filename as argument from command line and replace 'home.txt'
 my_data = pd.read_csv('home.txt',names=["size","bedroom","price"])
