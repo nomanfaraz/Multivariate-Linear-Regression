@@ -1,4 +1,4 @@
-# Multivariate-Regression
+# Multivariate-Linear-Regression
 Data Science course assignment 1
 
 To do :
