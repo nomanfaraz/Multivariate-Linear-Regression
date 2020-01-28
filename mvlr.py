@@ -27,7 +27,7 @@ def gradientDescent(X,y,theta,iters,alpha):
 #To do: function to return training X training Y test X and test Y
 #Use the 'extracting' lines of code and make changes
 def getTrainingTest(my_data):
-    my_data = pd.read_csv('home.txt',names=["size","bedroom","price"])
+    #my_data = pd.read_csv('home.txt',names=["size","bedroom","price"])
     x = my_data[['size','bedroom']]
     y = my_data['price']
     
