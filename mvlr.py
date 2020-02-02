@@ -1,8 +1,12 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import sys
+import csv
 %matplotlib inline
 from sklearn.model_selection import train_test_split #getTrainingTest(my_data)
+from sklearn.metrics import mean_squared_error
+from math import sqrt
 
 #function to compute Cost given X (input data) y (output data) and theta
 def computeCost(X,y,theta):
@@ -48,15 +52,20 @@ def gdRegularized(X,y,theta,iters,alpha):
 
 
 #To do: get filename as argument from command line and replace 'home.txt'
-my_data = pd.read_csv('home.txt',names=["size","bedroom","price"])
+filename=csv.argv[1]
+my_data = pd.read_csv(filename,names=["size","bedroom","price"])
 
 my_data = (my_data - my_data.mean())/my_data.std()  #Normalizing the data
 my_data.head()
 
+with open(filename) as f:
+    reader=csv.reader(f,delimiter=',',skipinitialspace=False)
+    row=next(reader)
+    cols=len(row)
 #extracting the features in array X. T
 #To do: change the '2' to accomodate as many features(columns) as the input data has.
-#Code should work for any size of input (any input file). Presently only in home.txt only 2 features.
-X = my_data.iloc[:,0:2]                             
+#Code should work for any size of input (any input file). Presently only in home.txt only 2 features. Done
+X = my_data.iloc[:,0:cols-1]                             
 
 ones = np.ones([X.shape[0],1])
 X = np.concatenate((ones,X),axis=1)                 #setting X[:,0] as 1's
@@ -64,8 +73,8 @@ X = np.concatenate((ones,X),axis=1)                 #setting X[:,0] as 1's
 #print(len(X))
 
 #extracting predicted outputs
-#To do: change the '2:3' to the last column of data (Generalized code).
-y = my_data.iloc[:,2:3]                             
+#To do: change the '2:3' to the last column of data (Generalized code). Done
+y = my_data.iloc[:,cols-1:cols]                             
 
 theta = np.zeros([1,3])                             #initializing theta values as zeroes 
 
