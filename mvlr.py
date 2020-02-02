@@ -5,8 +5,8 @@ import sys
 import csv
 %matplotlib inline
 from sklearn.model_selection import train_test_split #getTrainingTest(my_data)
-from sklearn.metrics import mean_squared_error
-from math import sqrt
+from sklearn.metrics import mean_squared_error #rms 
+from math import sqrt 
 
 #function to compute Cost given X (input data) y (output data) and theta
 def computeCost(X,y,theta):
