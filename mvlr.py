@@ -52,7 +52,7 @@ def gdRegularized(X,y,theta,iters,alpha):
 
 
 #To do: get filename as argument from command line and replace 'home.txt'
-filename=csv.argv[1]
+filename=sys.argv[1]
 my_data = pd.read_csv(filename,names=["size","bedroom","price"])
 
 my_data = (my_data - my_data.mean())/my_data.std()  #Normalizing the data
