@@ -42,7 +42,7 @@ def getTrainingTest(my_data):
 
 #To do: function to calculate root mean square error for accuracy of model
 def getAccuracy(X,y,theta):
-    error=sqrt(mean_squared_error(y, )  #still left
+    error=sqrt(mean_squared_error(y,X@theta.T )  #still left
     return error
 
 #To do: function to do Gradient Descent with Regularization
@@ -65,11 +65,10 @@ with open(filename) as f:
 #extracting the features in array X. T
 #To do: change the '2' to accomodate as many features(columns) as the input data has.
 #Code should work for any size of input (any input file). Presently only in home.txt only 2 features. Done
-X = my_data.iloc[:,0:cols-1]                             
-
+X = my_data.iloc[:,0:cols-1]      
 ones = np.ones([X.shape[0],1])
 X = np.concatenate((ones,X),axis=1)                 #setting X[:,0] as 1's
-#print(X)
+#print(X)Yθ=J
 #print(len(X))
 
 #extracting predicted outputs
@@ -92,7 +91,8 @@ g,thita = gradientDescent(X,y,theta,iters,alpha)
 
 c = computeCost(X,y,thita)
 print("Final cost ",c)
-
+Given the cost function:
+f(m,b)=1
 fig, ax = plt.subplots()  
 ax.plot(np.arange(iters), g, 'r')  
 ax.set_xlabel('Iterations')  
