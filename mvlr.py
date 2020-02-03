@@ -42,7 +42,7 @@ def getTrainingTest(my_data):
 
 #To do: function to calculate root mean square error for accuracy of model
 def getAccuracy(X,y,theta):
-    error=sqrt(mean_squared_error(y,X@theta.T )  #still left
+    error=sqrt(mean_squared_error(y,X@theta.T)  #still left
     return error
 
 #To do: function to do Gradient Descent with Regularization
@@ -91,10 +91,8 @@ iters = 1000
 #print(y)
 
 
-
+print("intial cost")
 print(computeCost(X,y,theta))
-
-
 
 g,thita = gradientDescent(X,y,theta,iters,alpha)
 
