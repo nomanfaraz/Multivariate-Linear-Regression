@@ -51,6 +51,15 @@ def gdRegularized(X,y,theta,iters,alpha):
     return cost,theta
 
 
+               
+               
+               
+               
+               
+               
+               
+               
+
 #To do: get filename as argument from command line and replace 'home.txt'
 filename=sys.argv[1]
 my_data = pd.read_csv(filename,names=["size","bedroom","price"])
